@@ -10,7 +10,7 @@
 
 ### Getting Started
 
-### The prerequisites:
+#### The prerequisites:
 
 1. Install [Git](https://git-scm.com/downloads) and [Node.js](https://nodejs.org/en/download/) on your machine.
 
