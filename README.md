@@ -49,4 +49,4 @@ node index.js
 
 ### Additional Resources
 
-[Hedera Documentation](https://docs.hedera.com/guides/docs/sdks/consensus)
+- [Hedera Documentation](https://docs.hedera.com/guides/docs/sdks/consensus)
