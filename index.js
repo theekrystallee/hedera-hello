@@ -24,9 +24,6 @@ async function main() {
     const newTopicId =  transactionReceipt.topicId;
     console.log("The new topic ID is " + newTopicId);
 
-    await sleep(3000);
-    console.log("Done");
-
     for(var i = 0; i < 5; i++) {
         const hcsMessage = await new TopicMessageSubmitTransaction()
         .setTopicId(newTopicId)
@@ -36,9 +33,5 @@ async function main() {
         // const hcsMessageReceipt = hcsMessage.getReceipt(client);
         console.log(`Message ${i}: ${hcsMessage.toString()}`);
         }   
-
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
 }
 main();
