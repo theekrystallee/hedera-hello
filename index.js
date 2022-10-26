@@ -30,8 +30,9 @@ async function main() {
         .setMessage("Hello, world!")
         .execute(client);
         
-        // const hcsMessageReceipt = hcsMessage.getReceipt(client);
-        console.log(`Message ${i}: ${hcsMessage.toString()}`);
+        console.log(`Message ${i}: 
+        Status: SUCCESS 
+            ${hcsMessage.toString()}`);
         }   
 }
 main();
