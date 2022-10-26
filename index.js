@@ -4,6 +4,7 @@ require("dotenv").config();
 const {
     Client,
     TopicCreateTransaction,
+    TopicMessageSubmitTransaction,
   } = require("@hashgraph/sdk");
 
 async function main() {
@@ -15,7 +16,7 @@ async function main() {
     // set the operator account ID and private key
     client.setOperator(accountId, privateKey);
     
-    const transactionId = new TopicCreateTransaction();
+    const transactionId = await new TopicCreateTransaction();
         // .execute(client);
     const txResponse = await transactionId.execute(client);
     const transactionReceipt = await txResponse.getReceipt(client);
@@ -23,5 +24,21 @@ async function main() {
     const newTopicId =  transactionReceipt.topicId;
     console.log("The new topic ID is " + newTopicId);
 
+    await sleep(2000);
+    console.log("Done");
+
+    for(var i = 0; i < 5; i++) {
+        const hcsMessage = await new TopicMessageSubmitTransaction()
+        .setTopicId(newTopicId)
+        .setMessage("Hello, world!")
+        .execute(client);
+        
+        // const hcsMessageReceipt = hcsMessage.getReceipt(client);
+        console.log(`Message ${i}: ${hcsMessage.toString()}`);
+        }   
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 }
 main();
