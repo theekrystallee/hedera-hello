@@ -4,7 +4,6 @@ require("dotenv").config();
 const {
     Client,
     TopicCreateTransaction,
-    TopicMessageSubmitTransaction,
   } = require("@hashgraph/sdk");
 
 async function main() {
