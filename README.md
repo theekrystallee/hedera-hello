@@ -35,6 +35,11 @@ npm install
 
 3. Rename the `.env.example` file to `.env` and add your Hedera account ID and private key.
 
+```zsh
+ACCOUNT_ID = ENTER YOUR ACCOUNT ID
+PRIVATE_KEY = ENTER YOUR PRIVATE KEY
+```
+
 4. Install `dotenv`:
 
 ```zsh
