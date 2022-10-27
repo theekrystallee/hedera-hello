@@ -17,12 +17,10 @@ async function main() {
     client.setOperator(accountId, privateKey);
     
     const transactionId = await new TopicCreateTransaction();
-        // .execute(client);
     const txResponse = await transactionId.execute(client);
     const transactionReceipt = await txResponse.getReceipt(client);
-    // const receipt = await transactionId.getReceipt(client);
     const newTopicId =  transactionReceipt.topicId;
-    console.log("The new topic ID is " + newTopicId);
+    console.log("The new topic ID is: " + newTopicId);
 
     for(var i = 0; i < 5; i++) {
         const hcsMessage = await new TopicMessageSubmitTransaction()
@@ -30,9 +28,7 @@ async function main() {
         .setMessage("Hello, world!")
         .execute(client);
         
-        console.log(`Message ${i}: 
-        Status: SUCCESS 
-            ${hcsMessage.toString()}`);
+        console.log(`Message ${i}: sent successfully ${hcsMessage}`);
         }   
 }
 main();
