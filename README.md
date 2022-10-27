@@ -33,7 +33,7 @@ git clone https://github.com/theekrystallee/hedera-hello.git
 npm install
 ```
 
-3. Rename the `.env.example` file to `.env` and add your Hedera account ID and private key.
+3. Rename the `.env.example` file to `.env` and add your Hedera account ID and private key. This is what the `.env` file should look like:
 
 ```zsh
 ACCOUNT_ID = ENTER YOUR ACCOUNT ID
